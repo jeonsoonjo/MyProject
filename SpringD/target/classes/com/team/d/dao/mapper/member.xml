@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.team.d.dao.MemberDAO">
+	
+	<!-- 로그인(login) -->
+	<select id="login" resultType="com.team.d.dto.MemberDTO">
+		SELECT MNO, MNAME, MID, MPW, MEMAIL, MPHONE, MGRADE, MREGDATE, STATUS
+		  FROM MEMBER
+		 WHERE MID = #{mId}
+		   AND MPW = #{mPw}
+		   AND STATUS = 0
+	</select>
+	
+	<!-- 카카오 로그인(loginKakao) -->
+	<select id="kakaoLogin" resultType="com.team.d.dto.MemberDTO">
+		SELECT MNO, MNAME, MID, MPW, MEMAIL, MPHONE, MGRADE, MREGDATE, STATUS
+		  FROM MEMBER
+		 WHERE MEMAIL = #{mEmail}
+	</select>
+	
+	<!-- 회원가입(join) -->
+	<insert id="join">
+		INSERT INTO MEMBER
+		VALUES (MEMBER_SEQ.NEXTVAL, #{mName}, #{mId}, #{mPw}, #{mEmail}, #{mPhone}, 'bronze', SYSDATE, 0)
+	</insert>
+	
+	<!-- 아이디 체크(idCheck) -->
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(MNO)
+		  FROM MEMBER
+		 WHERE MID = #{mId}
+	</select>
+	
+	<!-- 이메일 체크(emailCheck) -->
+	<select id="emailCheck" resultType="int">
+		SELECT COUNT(MEMAIL)
+		  FROM MEMBER
+		 WHERE MEMAIL = #{mEmail}
+	</select>
+	
+	<!-- 비밀번호 변경(updatePw) -->
+	<update id="updatePw">
+		UPDATE MEMBER
+		   SET MPW = #{mPw}
+		 WHERE MNO = #{mNo}
+	</update>
+
+	<!-- 회원정보 변경(updateMember): 이름, 전화번호, 이메일 -->
+	<update id="updateMember">
+		UPDATE MEMBER
+		   SET MNAME = #{mName}
+		     , MPHONE = #{mPhone}
+		     , MEMAIL = #{mEmail}
+		 WHERE MNO = #{mNo}
+	</update>
+	
+	<!-- 아이디 찾기(findId) -->
+	<select id="findId" resultType="com.team.d.dto.MemberDTO">
+		SELECT MID
+		  FROM MEMBER
+		 WHERE MNAME = #{mName}
+		   AND MEMAIL = #{mEmail}
+	</select>
+	
+	<!-- 비밀번호 찾기&변경(findPw) -->
+	<select id="findPw" resultType="com.team.d.dto.MemberDTO">
+		SELECT *
+		  FROM MEMBER
+		 WHERE MID = #{mId}
+		   AND MEMAIL = #{mEmail}
+	</select>
+	
+	<!-- 비밀번호 찾기&변경(changePw) -->
+	<update id="changePw">
+		UPDATE MEMBER
+		   SET MPW = #{mPw}
+		 WHERE MEMAIL = #{mEmail}
+	</update>
+	
+	<!-- 회원탈퇴(leave) -->
+	<update id="leave">
+		UPDATE MEMBER
+		   SET STATUS = 1
+		 WHERE MNO = #{mNo}
+	</update>
+ 
+	<!-- 관리자 로그인(adminLogin) -->
+	<select id="adminLogin" parameterType="com.team.d.dto.MemberDTO" resultType="com.team.d.dto.MemberDTO">
+		SELECT MNAME, MID, MPW
+		  FROM ADMIN
+		 WHERE MID = #{mId}
+		   AND MPW = #{mPw}
+	</select>
+
+</mapper>

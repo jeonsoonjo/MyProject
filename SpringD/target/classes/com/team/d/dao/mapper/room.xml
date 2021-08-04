@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.d.dao.RoomDAO">
+
+	<select id="selectRoomList" resultType="com.team.d.dto.RoomDTO">
+		SELECT RNO, RNAME, RPRICE, RGRADE, RIMG, RACCEPT, RSIZE
+		  FROM ROOM
+		 ORDER BY RNO DESC
+	</select>
+	
+	<select id="selectRoomByRNo" resultType="com.team.d.dto.RoomDTO">
+		SELECT RNO, RNAME, RPRICE, RGRADE, RIMG, RIMG1, RIMG2, RIMG3, RIMG4, RIMG5, RACCEPT, RSIZE
+		  FROM ROOM
+		 WHERE RNO = #{param1}
+	</select>
+	
+</mapper>

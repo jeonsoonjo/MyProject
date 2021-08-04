@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.d.dao.ReplyDAO">
+
+	<insert id="insertReply" parameterType="map">
+		INSERT INTO BOARD_REPLY VALUES(BOARD_REPLY_SEQ.NEXTVAL, #{MID}, #{RCONTENT}, #{PARENT} ,#{BIDX}, SYSDATE)
+	</insert>
+	
+	<select id="getReplyListByBidx" parameterType="map" resultType="com.team.d.dto.ReplyDTO"> 
+		SELECT B.RN, B.RIDX, B.RCONTENT, B.PARENT, B.MID, B.BIDX, B.RPOSTDATE
+		  FROM (SELECT ROWNUM AS RN, A.*
+		  		  FROM (SELECT RIDX, RCONTENT, PARENT, MID, BIDX, RPOSTDATE
+		  		  		  FROM BOARD_REPLY
+		  		  		 WHERE BIDX = #{BIDX}
+		  		  		   AND PARENT = 0
+		 		 		 ORDER BY RPOSTDATE DESC) A) B
+	  	 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select> 
+	
+	<select id="getChildListByRidx" parameterType="map" resultType="com.team.d.dto.ReplyDTO">	 
+		SELECT B.RN, B.RIDX, B.RCONTENT, B.PARENT, B.MID, B.BIDX, B.RPOSTDATE
+		  FROM (SELECT ROWNUM AS RN, A.*
+		  		  FROM (SELECT RIDX, RCONTENT, PARENT, MID, BIDX, RPOSTDATE
+		  		  		  FROM BOARD_REPLY
+		  		  		 WHERE BIDX = #{BIDX}
+		  		  		   AND PARENT = #{PARENT}
+		 		 		 ORDER BY RPOSTDATE DESC) A) B
+	  	 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+
+	<select id="getTotalChildReplyByBIDX" parameterType="map" resultType="int">
+		SELECT COUNT(RIDX)
+		  FROM BOARD_REPLY
+		 WHERE BIDX = #{BIDX}
+		   AND PARENT = #{PARENT}
+	</select>
+
+	<insert id="insertReReply" parameterType="map">
+		INSERT INTO BOARD_REPLY VALUES(BOARD_REPLY_SEQ.NEXTVAL, #{MID}, #{CONTENT}, #{PARENT} ,#{BIDX}, SYSDATE)
+	</insert>
+	
+	<select id="getTotalReplyByBIDX" resultType="int">
+		SELECT COUNT(RIDX)
+		  FROM BOARD_REPLY
+		 WHERE BIDX = #{BIDX}
+		   AND PARENT = 0
+	</select>
+	
+</mapper>
