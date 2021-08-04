@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* 1900px 이상 */
+@media screen and (min-width: 1900px) {
+	.myPage_form{
+		margin: 0 auto;
+		padding: 10px 0;
+		width: 400px;
+		text-align: center;
+	}
+}
+/* 1900px 이하 */
+@media screen and (max-width: 1900px) {
+	.myPage_form{
+		margin: 0 auto;
+		margin-top: 100px;
+		padding: 10px 0;
+		width: 400px;
+		text-align: center;
+	}
+}
+.naming{
+	float: left;
+	margin-left: 50px;
+	font-size: 13px;
+	font-weight: 600;
+}
+.condition, .kakao_email{
+	font-size:12px;
+	font-weight: 300;
+	color: #804040;
+}
+[class$="result"]{ /* result로 끝나는 class */
+	margin-left: 20px;
+	font-size: 12px;
+}
+#f input{
+	width: 300px;
+	height: 40px;
+	border: 1px solid black;
+}
+#f input[type=text]{
+	outline: none;
+	text-indent: 10px;
+}
+#f input[type=password]{
+	outline: none;
+	text-indent: 10px;
+}
+#f input::placeholder{
+	color: #c0c0c0;
+	font-style: italic;
+}
+#f input[type=button]{
+	width: 305px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+#userKey{
+	float: left;
+	display: inline-block;
+	margin-left: 48px;
+	margin-right: 10px;
+}
+#emailAuth_btn{
+	float: left;
+	width: 100px;
+	display: inline-block;
+}
+.emailAuth_result{
+	display: block;
+	float: left;
+	margin-left: 50px;
+}
+.phone{
+	margin-top: 15px;
+}
+#f input[type=button]:hover {
+	cursor: pointer;
+}

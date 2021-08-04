@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+body, div, td, th, p, textarea {
+	margin: 0;
+	padding: 0;
+	font: 12px/160% Dotum,'돋움',sans-serif;
+  	color: #101010;
+}
+h1, h2, h3, h4, h5, h6, h7, form {
+	margin: 0;
+}
+ul, ol, li{
+	list-style: none;
+}
+.packProductDesc {
+	margin: 50px 0 60px;
+}
+.packProductDesc > ul {
+	overflow: hidden;
+	padding-left: 0;
+}
+.packProductDesc > ul > li.first {
+	margin-left: 0;
+}
+.packProductDesc > ul > li {
+	float: left;
+	width: 420px;
+}
+.packProductDesc > ul > li.last {
+	float: left;
+}
+.packProductDesc dt {
+	font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 17px;
+    color: #343434;
+}
+.packProductDesc .descImg {
+	line-height: 0;
+    font-size: 0;
+    margin-bottom: 10px;
+}
+.packProductDesc dd {
+	color: #444;
+}
+.packProductDesc .descTxt {
+	width: 420px;
+	line-height: 25px;
+	margin-left: 0;
+}
+.packProductDesc .detailBtnBox {
+	display: block;
+  	margin-top: 8px;
+}
+/* 1900px 이상 */
+@media screen and (min-width: 1900px) {
+		#contents{
+	    position: relative;
+	    margin-top: 50px;
+	    margin-left: 100px;
+	    width: 100%;
+	    height: 1100px;
+	}
+}
+/* 1900px 이하 */
+@media screen and (max-width: 1900px) {
+		#contents{
+	    position: relative;
+	    margin-top: 150px;
+	    margin-left: 100px;
+	    width: 100%;
+	    height: 1100px;
+	}
+}
+thead th {
+	height: auto;
+	font-weight: bold;
+    text-align: center;
+    padding: 16px 0;
+    color: #888;
+    background: #faf9f4;
+    border-right: 1px solid #eceae1;
+	border-bottom: 1px solid #eceae1;
+	vertical-align: top;
+	line-height: 100%;
+}
+tbody th {
+	height: auto;
+    border-left: none;
+    border-right: 1px solid #eceae1;
+    border-bottom: 1px solid #eceae1;
+    background: #f8f8f8;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+    color: #888;
+    line-height: 100%;
+  	vertical-align: middle;
+}
+tbody td {
+	border-left: none;
+	border-right: 1px solid #eceae1;
+  	border-bottom: 1px solid #eceae1;
+    padding: 6px 0 6px 0;
+    font-family: Dotum;
+    font-size: 12px;
+    background: #fff;
+    color: #1b1b1b;
+    text-align: center;
+    line-height: 15px;
+}
+h2 {
+	margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+table {
+	display: table;
+	box-sizing: border-box;
+	text-indent: initial;
+	border-spacing: 2px;
+	border-color: grey;
+}
+colgroup {
+	display: table-column-group;
+}
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+tbody {
+	display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+th {
+	display: table-cell;
+}
+#close {
+	width: 19px;
+	height: 19px;
+	text-indent: -9999%;
+    overflow: hidden;
+    display: block;
+}
+.first th,
+.first td {
+	border-top: 1px solid #cdcbbe;
+}
+.satelliteChannel {
+	width: 489px;
+	background: #FFF;
+	z-index: 1500;
+	zoom: 1;
+	box-shadow: 1px 1px 2px #555;
+}
+.head {
+	position: relative;
+	height: 30px;
+	zoom: 1;
+	z-index: 10;
+	background: #9b7f5b;
+  	border: #9b7f5b solid 5px;
+}
+.title {
+	width: 147px;
+	height: 19px;
+	display: block;
+	padding: 8px 0 0 28px;
+	overflow: hidden;
+	text-indent: -9999%;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: right;
+	line-height: 100px;
+}
+.closeBtn {
+	float: right;
+	padding: 6px 22px 0 0;
+}
+.content {
+	background: #FFF;
+    border: #9b7f5b solid 5px;
+    border-top: none;
+}
+.scrollBox {
+	height: 450px;
+	overflow: auto;
+	position: relative;
+}
+.scrollBoxIn {
+	zoom: 1;
+}
+.tableAccSatellite {
+	margin: 0;
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.col_last {
+	border-right: 0 !important;
+}

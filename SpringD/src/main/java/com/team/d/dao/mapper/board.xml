@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.d.dao.BoardDAO">
+
+	<!-- 인덱스, 아이디, 제목, 조회수, 내용, 파일1,2,3, 등록일 -->
+	<insert id="insertBoard" parameterType="map">
+		INSERT INTO BOARD
+		VALUES(BOARD_SEQ.NEXTVAL, 
+			   #{MID}, 
+			   #{BTITLE}, 
+			   #{BCONTENT}, 
+			   0, 
+			   #{BFILENAME1}, 
+			   #{BFILENAME2}, 
+			   #{BFILENAME3}, 
+			   SYSDATE )	
+	</insert>
+	
+	<select id="boardList" parameterType="com.team.d.dto.PageDTO" resultType="com.team.d.dto.BoardDTO">
+		SELECT B.RN, B.BIDX, B.MID, B.BTITLE, B.BCONTENT, B.BPOSTDATE, B.BHIT, B.BFILENAME1, B.BFILENAME2, B.BFILENAME3
+		  FROM (SELECT ROWNUM AS RN, A.*
+		  		  FROM (SELECT BIDX, MID, BTITLE, BCONTENT, BPOSTDATE, BHIT, BFILENAME1, BFILENAME2, BFILENAME3
+		  		  		  FROM BOARD
+		  		  		 WHERE MID != 'admin'
+		 		 		 ORDER BY BHIT DESC) A) B
+	  	 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+	
+	<select id="getTotalRecord" resultType="int">
+		SELECT COUNT(BIDX)
+		  FROM BOARD
+		 WHERE MID != 'admin'
+	</select>
+	
+	<select id="getSearchedlRecord" resultType="int">
+		SELECT COUNT(BIDX)
+		  FROM BOARD
+		 WHERE ${column} LIKE '%' || #{query} || '%'
+	</select>
+	
+	<select id="searchList" parameterType="map" resultType="com.team.d.dto.BoardDTO">
+		SELECT B.RN, B.BIDX, B.MID, B.BTITLE, B.BCONTENT, B.BPOSTDATE, B.BHIT, B.BFILENAME1, B.BFILENAME2, B.BFILENAME3
+		  FROM (SELECT ROWNUM AS RN, A.*
+		  		  FROM (SELECT BIDX, MID, BTITLE, BCONTENT, BPOSTDATE, BHIT, BFILENAME1, BFILENAME2, BFILENAME3
+		  		  		  FROM BOARD
+		  		  		 WHERE ${column} LIKE '%' || #{query} || '%'
+		  		  		   AND MID != 'admin'
+		 		 		 ORDER BY BHIT DESC) A) B
+	  	 WHERE B.RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+
+	<select id="getNoticeList" resultType="com.team.d.dto.BoardDTO">
+		SELECT BIDX, MID, BTITLE, BCONTENT, BPOSTDATE, BHIT, BFILENAME1, BFILENAME2, BFILENAME3
+		  FROM BOARD
+	     WHERE MID = 'admin'
+		 ORDER BY BHIT DESC
+	</select>	
+	
+	<update id="updateHitByIdx">
+		UPDATE BOARD 
+		   SET BHIT = BHIT + 1
+		 WHERE BIDX = #{BIDX}
+	</update>
+	
+	<select id="selectBoardByIdx" resultType="com.team.d.dto.BoardDTO">
+		SELECT BIDX, MID, BTITLE, BCONTENT, BPOSTDATE, BHIT, BFILENAME1, BFILENAME2, BFILENAME3
+		  FROM BOARD
+		 WHERE BIDX = #{BIDX}
+	</select>
+	
+	<update id="updateBoard" parameterType="map">
+		UPDATE BOARD
+		   SET BCONTENT = #{BCONTENT},
+		       BTITLE = #{BTITLE},
+		       <if test="#{BFILENAME1 != 'null'}">
+		   		    BFILENAME1 = #{BFILENAME1},
+		       </if>
+		       <if test="#{BFILENAME2 != 'null'}">
+		       		BFILENAME2 = #{BFILENAME2},
+		       </if>
+		       <if test="#{BFILENAME3 != 'null'}">
+		       		BFILENAME3 = #{BFILENAME3}
+		       </if>
+		 WHERE BIDX = #{BIDX}
+	</update>
+	
+	<delete id="deleteBoard">
+		DELETE FROM BOARD WHERE BIDX = #{BIDX}
+	</delete>
+	
+</mapper>

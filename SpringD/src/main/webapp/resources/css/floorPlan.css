@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+body, div, td, th, p, textarea {
+	margin: 0;
+    padding: 0;
+    font: 12px/160% Dotum,'돋움',sans-serif;
+    color: #101010;
+}
+ul, ol, li, dl, dt, dd {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+a {
+	display: block;
+    padding: 5px;
+    height: 26px;
+    width: 96px;
+    line-height: 26px;
+    border: #e2d5c5 solid 1px;
+    background: #e2d5c5;
+    color: #75604b;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+img {
+	vertical-align: top;
+}
+.container {
+	padding: 25px 27px;
+    background: #FFF;
+    border: #9b7f5b solid 5px;
+    border-top: none;
+}
+.wrap {
+	width: 100%;
+}
+.tab {
+	position: relative;
+    overflow: hidden;
+    padding: 37px 0px 0 0px;
+}
+.ctn {
+	float: left;
+}
+.title {
+	position: absolute;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.ctn1 .title {
+	left: 0px;
+}
+.ctn2 .title {
+	left: 109px;
+}
+.box {
+	display: block;
+	width: 534px;
+	border: #e2d5c5 solid 1px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+}

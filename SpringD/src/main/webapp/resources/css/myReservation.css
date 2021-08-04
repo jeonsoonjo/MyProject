@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/* 1900px 이상 */
+@media screen and (min-width: 1900px) {
+	#box_middle{
+		margin: 0 auto;
+		padding: 5% 0;
+		width: 700px;
+		height:500px;
+		text-align: center;
+	}
+}
+/* 1900px 이하 */
+@media screen and (max-width: 1900px) {
+	#box_middle{
+		margin: 0 auto;
+		margin-top: 100px;
+		padding: 30px 0;
+		width: 700px;
+		height:500px;
+		text-align: center;
+	 	
+	}
+}
+
+table,td,tr,th{
+			border: 1px solid #c2ad99;
+}

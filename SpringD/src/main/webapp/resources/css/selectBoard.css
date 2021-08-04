@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* 1900px 이상 */
+@media screen and (min-width: 1900px) {
+	.container{
+		margin: 0 auto;
+		width: 800px;
+		padding: 50px;
+		text-align: center;
+	}
+}
+/* 1900px 이하 */
+@media screen and (max-width: 1900px) {
+	.container{
+		margin: 0 auto;
+		margin-top: 100px;
+		width: 800px;
+		padding: 50px;
+		text-align: center;
+	}
+}
+.reply_box{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 700px;
+	font-size: 13px;
+	background-color: #f0efed;
+}
+.writer_box{
+	font: bold;
+	font-weight: 900;
+	font-size: 16px;
+}
+.content_box{
+	color: blue;
+}
+.date_box{
+	font-size: 12px;
+	color: #999999;
+}
+.hide{
+	display:none;
+}
+.re_re_box{
+	padding: 0;
+	height: 45px;
+	width: 750px;
+	justify-content: space-between;
+}
+.re_re_content{
+	border: 1px solid black;
+	margin: 0 15px;
+	height: 30px;
+	width: 500px;
+	outline: none;
+}
+.re_writer_box{
+	background-color: black;
+	color: white;
+	border-radius: 5px;
+}
+.child_writer_box{
+	margin-left: 30px;
+	font-weight: 900;
+	font-size: 16px;
+}
+.child_content_box, .child_date_box{
+	margin-left: 60px;
+}
+.child{
+	margin: 5px 0 5px 20px;
+	padding: 3px 3px 3px 0;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: #f0efed;
+}
+.disable {
+	color: silver;
+}
+.link {
+	cursor: pointer;
+}
+.now_page {
+	color: limegreen;
+}
+.re_reply_paging{
+	display: flex;
+}
+#f input[type=button]{
+	width: 150px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+#f input[type=button]:hover {
+	cursor: pointer;
+}
+.naming{
+	font-size: 13px;
+	font-weight: 600;
+	maring-right: 20px;
+}
+.viewBoard{
+	padding: 10px;
+}
+#f_reply{
+	padding: 20px;
+	text-align: left;
+	padding-left: 50px;
+}
+.reply_box{
+	text-indent: 20px;
+}
+#f input{
+	width: 200px;
+	height: 30px;
+	border: none;
+	outline: none;
+	margin-left: 10px;
+}
+.margin{
+	margin-left: 100px;
+}
+#f input[type=text]{
+	outline: none;
+	text-indent: 10px;
+}
+.re_btn{
+	width: 50px;
+	height: 25px;
+	margin-left: 20px;
+}
+.reply_btn{
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+.reply_btn:hover{
+	cursor: pointer;
+}
+.btn{
+	width: 60px;
+	height: 25px;
+	margin-left: 20px;
+	border: none;
+}
+.btn:hover {
+	cursor: pointer;
+}

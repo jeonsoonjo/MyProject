@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+.container{
+	margin: 0 auto;
+	width: 400px;
+	height: 700px;
+	margin-top: 50px;
+}
+h3{
+	font-size: 16px;
+}
+/* 1900px 이상 */
+@media screen and (min-width: 1900px) {
+	.find_form{
+		margin: 0 auto;
+		padding: 20px 0;
+		width: 400px;
+		text-align: center;
+	}
+	#findId_form{
+		margin: 0 auto;
+		margin-top: 50px;
+		width: 400px;
+		text-align: center;
+	}
+	#findPw_form{
+		margin: 0 auto;
+		width: 400px;
+		text-align: center;
+	}
+}
+/* 1900px 이하 */
+@media screen and (max-width: 1900px) {
+	.find_form{
+		margin: 0 auto;
+		margin-top: 150px;
+		padding: 20px 0;
+		width: 400px;
+		text-align: center;
+	}
+	#findId_form{
+		margin: 0 auto;
+		margin-top: 50px;
+		width: 400px;
+		text-align: center;
+	}
+	#findPw_form{
+		margin: 0 auto;
+		width: 400px;
+		text-align: center;
+	}
+}
+.title{
+	text-align: center;
+	font-size: 13px;
+	color: #804040;
+}
+.naming{
+	float: left;
+	margin-left: 50px;
+	font-size: 13px;
+	font-weight: 600;
+}
+#f1 input{
+	width: 300px;
+	height: 40px;
+	border: 1px solid black;
+}
+#f1 input[type=text]{
+	outline: none;
+	text-indent: 10px;
+	margin-bottom: 20px;
+}
+#f1 input[type=password]{
+	outline: none;
+	text-indent: 10px;
+}
+#f1 input::placeholder{
+	color: #c0c0c0;
+	font-style: italic;
+}
+#f1 input[type=button]:hover {
+	cursor: pointer;
+}
+#f1 input[type=button]{
+	width: 305px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+input[type=button]{
+	width: 305px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+#f2 input{
+	width: 300px;
+	height: 40px;
+	border: 1px solid black;
+}
+#f2 input[type=text]{
+	outline: none;
+	text-indent: 10px;
+	margin-bottom: 20px;
+}
+#f2 input[type=password]{
+	outline: none;
+	text-indent: 10px;
+}
+#f2 input::placeholder{
+	color: #c0c0c0;
+	font-style: italic;
+}
+#f2 input[type=button]:hover {
+	cursor: pointer;
+}
+#f2 input[type=button]{
+	width: 305px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+[class$="result"]{ /* result로 끝나는 class */
+	margin-left: 20px;
+	font-size: 12px;
+}
+#f3 input{
+	width: 300px;
+	height: 40px;
+	border: 1px solid black;
+}
+#f3 input[type=text]{
+	outline: none;
+	text-indent: 10px;
+	margin-bottom: 20px;
+}
+#f3 input[type=button]:hover {
+	cursor: pointer;
+}
+#f3 input[type=button]{
+	width: 305px;
+	height: 40px;
+	background-color: #f1e3c4;
+	border: none;
+	margin-bottom: 10px;
+}
+#userKey{
+	float: left;
+	display: inline-block;
+	margin-left: 48px;
+	margin-right: 10px;
+}
+#emailAuth_btn{
+	float: left;
+	width: 100px;
+	display: inline-block;
+}
+.emailAuth_result{
+	display: block;
+	float: left;
+	margin-left: 50px;
+}
+.join{
+	margin-top: 15px;
+}
+input[type=button]:hover{
+	cursor: pointer;
+}

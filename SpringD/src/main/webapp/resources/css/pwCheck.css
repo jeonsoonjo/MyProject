@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.subData{
+   box-sizing: border-box;
+   display: flex;
+   justify-content: flex-end;
+   position: absolute;
+   top: 20%;
+   right: 40%;
+   z-index: 1;
+   text-align:center;
+   background-color: #4e3637;
+   width: 450px;
+   height: 200px;
+   border-radius: 25px;
+   border: 5px double #999;
+   padding: auto;
+   color: white;
+   margin: auto;
+}
+
+.disabled{
+   display: none;
+}
+
+ #reNo_f{
+  margin: 50px auto;
+  padding:auto;
+  line-height: 100%;
+ }
+ 
+/* div - 팝업창 이름 스타일 */
+#popup_title{
+   width: 150px;
+   font-size: 20px;
+   text-align: center;
+   margin: 0 auto;
+} 
+
+.btn_box{
+   width:100%;
+   text-align: right;
+   border: 1px solid black;
+   z-index: 1;
+    position: absolute;
+   top: 0%;
+   right: 0%; 
+}
+
+#close{
+   position: absolute;
+   top: 1px;
+   right: 10px;
+   color: white;
+   cursor: pointer;
+}

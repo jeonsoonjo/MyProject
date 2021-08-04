@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* 1900px 이상 */
+@media screen and (min-width: 1900px) {
+	#box_middle{
+		margin: 0 auto;
+		padding: 10px 0;
+		width: 1000px;
+		height:500px;
+		text-align: center;
+		
+	}
+}
+/* 1900px 이하 */
+@media screen and (max-width: 1900px) {
+	#box_middle{
+		margin: 0 auto;
+		margin-top: 100px;
+		padding: 10px 0;
+		width: 500px;
+		text-align: center;
+	 	
+	}
+}
+
+h1{
+	display: inline-block;
+}
+#food{
+	width: 20px;
+	text-align: center;
+}
+ 
+ 
+#row_box1{
+	padding: 50px  30px;
+}
+#row_box2{
+	float: right;
+}
+table{
+	display: inline-block;
+	 float: none;
+}
+table,td,tr{
+	border: 1px solid #c2ad99;
+}
+#totalPay{
+	border:0 solid black;
+	outline:none;
+	font-size: 30px;
+	width: 150px;
+	text-align: right;
+}
