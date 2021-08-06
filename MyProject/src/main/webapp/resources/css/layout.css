@@ -362,6 +362,14 @@ h3 {
 		font-size: 80px;
 	}
 }
+
+.head { 
+  width: 90%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #e2525c;
+}
 /* 1900px 이하 화면 */
 @media screen and (max-width: 1900px) {
 	.header {

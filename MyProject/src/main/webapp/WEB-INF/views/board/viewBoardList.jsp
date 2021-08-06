@@ -152,7 +152,7 @@
 		function fn_makeTable(list){
 			$.each(list, function(i, board){
 				if(board.bfilename1 == 'null' || board.bfilename2 == 'null' || board.bfilename3 == 'null'){
-					$('<tr>')
+					$('<tr id="list">')
 					.append( $('<td>').text(board.bidx) )
 					.append( $('<td>').text(board.mid) )
 					.append( $('<td>').html('<a href="selectBoard.do?bIdx=' + board.bidx + '">' + board.btitle + '</a>') )
